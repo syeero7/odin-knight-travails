@@ -43,5 +43,17 @@ function knightMoves(start, end) {
   }
 }
 
-console.log(knightMoves([0, 0], [3, 3]));
-console.log(knightMoves([3, 3], [4, 3]));
+function printKnightMoves(start, end) {
+  const path = knightMoves(start, end);
+  let string = `The knight made it in ${path.length - 1} moves!
+Here's the knight's path:\n`;
+
+  path.forEach((node) => {
+    string += `\n[${node}]`;
+  });
+
+  console.log(string);
+}
+
+printKnightMoves([0, 0], [3, 3]);
+printKnightMoves([3, 3], [4, 3]);
