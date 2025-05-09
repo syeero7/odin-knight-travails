@@ -23,11 +23,10 @@ function knightMoves(start, end) {
       path.push(current);
 
       while (path.length) {
-        const [x, y] = path[path.length - 1];
-        const node = visitedNodes[`${x},${y}`];
+        const previousNode = visitedNodes[path[path.length - 1]];
 
-        if (!node) return path.reverse();
-        path.push(node);
+        if (!previousNode) return path.reverse();
+        path.push(previousNode);
       }
     }
 
